@@ -1,0 +1,13 @@
+AccessModifierOffset: -4
+AlignAfterOpenBracket: DontAlign
+AllowShortFunctionsOnASingleLine: Inline
+AlwaysBreakTemplateDeclarations: true
+BreakBeforeBinaryOperators: true
+BreakBeforeBraces: Allman
+BreakConstructorInitializersBeforeComma: true
+ColumnLimit: 120
+IndentWidth: 4
+KeepEmptyLinesAtTheStartOfBlocks: true
+SortIncludes: false
+Standard: Cpp11
+UseTab: Never

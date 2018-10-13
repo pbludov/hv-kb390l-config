@@ -1,0 +1,40 @@
+# C++ objects and libs
+*.slo
+*.lo
+*.o
+*.a
+*.la
+*.lai
+*.so
+*.dll
+*.dylib
+
+# Qt-es
+/.qmake.cache
+/.qmake.stash
+*.pro.user
+*.pro.user.*
+*.qbs.user
+*.qbs.user.*
+*.moc
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
+Makefile*
+*build-*
+
+# QtCreator
+*.autosave
+
+# Packages
+*.wixobj
+*.msi
+*.nupkg
+*.app
+*.dmg
+*.rpm
+*.deb
+*.changes
+
+# Mac trash
+.DS_Store

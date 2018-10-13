@@ -1,0 +1,51 @@
+language: cpp
+sudo: false
+dist: trusty
+
+addons:
+  apt:
+    packages:
+      - debhelper
+      - fakeroot
+      - libhidapi-dev
+      - libqt5widgets5
+      - libusb-1.0-0-dev
+      - qt5-default
+
+os:
+ - linux
+ - osx
+
+env:
+ - BUILD_MODE=release
+ - BUILD_MODE=debug
+
+install:
+ - |
+   if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
+     export MKSPEC=linux-g++
+   fi
+
+ - |
+   if [ "${TRAVIS_OS_NAME}" = "osx" ]; then
+     export MKSPEC=macx-clang
+     brew install pkg-config qt hidapi libusb
+     brew link qt --force
+   fi
+
+script:
+ - echo "Building for ${MKSPEC} in ${BUILD_MODE} mode..."
+ - mkdir build
+ - cd build
+ - qmake ../hv-kb390l-config.pro -spec ${MKSPEC} CONFIG+=${BUILD_MODE}
+ - make
+
+
+branches:
+  only:
+    - master
+
+cache:
+  apt: true
+  directories:
+    - $HOME/Library/Caches/Homebrew
