@@ -1,8 +1,8 @@
 # hv-kb390l-config
 
-[![Buddy Pipeline](https://app.buddy.works/pbludov/hv-kb390l-config/pipelines/pipeline/TODO/badge.svg?token=bf26fe8fed990190f11227bb2aa0c7d1e71118737795eed7b5069fff7106a015)](https://app.buddy.works/pbludov/hv-kb390l-config/pipelines/pipeline/124170)
+[![Buddy pipeline](https://app.buddy.works/pbludov/hv-kb390l-config/pipelines/pipeline/155981/badge.svg?token=bf26fe8fed990190f11227bb2aa0c7d1e71118737795eed7b5069fff7106a015)](https://app.buddy.works/pbludov/hv-kb390l-config/pipelines/pipeline/155981)
 [![Build Status](https://api.travis-ci.org/pbludov/hv-kb390l-config.svg?branch=master)](https://travis-ci.org/pbludov/hv-kb390l-config)
-[![Build status](https://ci.appveyor.com/api/projects/status/TODO?svg=true)](https://ci.appveyor.com/project/pbludov/hv-kb390l-config)
+[![Build status](https://ci.appveyor.com/api/projects/status/gjy4e9c75cobdeoe?svg=true)](https://ci.appveyor.com/project/pbludov/hv-kb390l-config)
 [![PPA](https://img.shields.io/badge/PPA-available-brightgreen.svg)](https://launchpad.net/~pbludov/+archive/ubuntu/ppa)
 [![Chocolatey](https://img.shields.io/badge/Chocolatey-available-brightgreen.svg)](https://chocolatey.org/packages/hv-kb390l-config)
 

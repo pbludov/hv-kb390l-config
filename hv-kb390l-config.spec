@@ -1,6 +1,6 @@
 Name: hv-kb390l-config
 Provides: hv-kb390l-config
-Version: 1.1.1
+Version: 1.0
 Release: 1%{?dist}
 License: LGPL-2.1+
 Source: %{name}.tar.gz
