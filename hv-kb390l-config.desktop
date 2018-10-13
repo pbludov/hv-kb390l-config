@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=HV KB390L configuration utility
+Comment=HAVIT KB390L keyboard unofficial configuration utility.
+Exec=hv-kb390l-config %U
+Icon=hv-kb390l-config
+StartupNotify=true
+Terminal=false
+Type=Application
+

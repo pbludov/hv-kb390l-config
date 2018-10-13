@@ -1,0 +1,2 @@
+# HAVIT KB390L keyboard write access
+SUBSYSTEM=="usb", ATTRS{idVendor}=="04d9", ATTRS{idProduct}=="a131", MODE="0666"

@@ -1,0 +1,76 @@
+- pipeline: "Buddy"
+  trigger_mode: "ON_EVERY_PUSH"
+  ref_name: "master"
+  actions:
+  - action: "Mageia"
+    type: "BUILD"
+    docker_image_name: "library/mageia"
+    docker_image_tag: "latest"
+    execute_commands:
+    - export RPM_BUILD_NCPUS=2
+    - tar czf ../${project.name}.tar.gz * --exclude=debian --exclude=*.yml && rpmbuild -ta ../${project.name}.tar.gz
+    setup_commands:
+    - dnf install -y make gcc-c++ libusb1-devel hidapi-devel rpm-build lsb-release lib64qt5base5-devel
+    trigger_condition: "ALWAYS"
+    working_directory: "/buddy/mageia"
+
+  - action: "CentOS"
+    type: "BUILD"
+    docker_image_name: "library/centos"
+    docker_image_tag: "latest"
+    execute_commands:
+    - export RPM_BUILD_NCPUS=2
+    - tar czf ../${project.name}.tar.gz * --exclude=debian --exclude=*.yml && rpmbuild -ta ../${project.name}.tar.gz
+    setup_commands:
+    - yum install -y epel-release
+    - yum install -y make gcc-c++ libusb1-devel hidapi-devel rpm-build lsb-release qt5-qtbase-devel
+    trigger_condition: "ALWAYS"
+    working_directory: "/buddy/centos"
+
+  - action: "Debian"
+    type: "BUILD"
+    docker_image_name: "library/debian"
+    docker_image_tag: "latest"
+    execute_commands:
+    - dpkg-buildpackage -tc -us -uc -I.git -I*.sh -rfakeroot
+    setup_commands:
+    - apt update -q
+    - apt install -y debhelper qt5-default libqt5widgets5 libhidapi-dev libusb-1.0-0-dev fakeroot pkg-config
+    trigger_condition: "ALWAYS"
+    working_directory: "/buddy/debian"
+
+  - action: "Fedora"
+    type: "BUILD"
+    docker_image_name: "library/fedora"
+    docker_image_tag: "latest"
+    execute_commands:
+    - export RPM_BUILD_NCPUS=2
+    - tar czf ../${project.name}.tar.gz * --exclude=debian --exclude=*.yml && rpmbuild -ta ../${project.name}.tar.gz
+    setup_commands:
+    - dnf install -y make gcc-c++ libusb1-devel hidapi-devel rpm-build redhat-lsb qt5-qtbase-devel
+    trigger_condition: "ALWAYS"
+    working_directory: "/buddy/fedora"
+
+  - action: "openSUSE"
+    type: "BUILD"
+    docker_image_name: "library/opensuse"
+    docker_image_tag: "latest"
+    execute_commands:
+    - export RPM_BUILD_NCPUS=2
+    - tar czf ../${project.name}.tar.gz * --exclude=debian --exclude=*.yml && rpmbuild -ta ../${project.name}.tar.gz
+    setup_commands:
+    - zypper install -y make gcc-c++ libusb-1_0-devel libhidapi-devel rpm-build lsb-release libqt5-qtbase-devel
+    trigger_condition: "ALWAYS"
+    working_directory: "/buddy/opensuse"
+
+  - action: "Ubuntu"
+    type: "BUILD"
+    docker_image_name: "library/ubuntu"
+    docker_image_tag: "latest"
+    execute_commands:
+    - dpkg-buildpackage -tc -us -uc -I.git -I*.sh -rfakeroot
+    setup_commands:
+    - apt update -q
+    - apt install -y debhelper qt5-default libqt5widgets5 libhidapi-dev libusb-1.0-0-dev fakeroot pkg-config
+    trigger_condition: "ALWAYS"
+    working_directory: "/buddy/ubuntu"

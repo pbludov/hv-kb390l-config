@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/app">
+        <file alias="icon">hv-kb390l-config.png</file>
+        <file alias="logo">logo.png</file>
+    </qresource>
+</RCC>

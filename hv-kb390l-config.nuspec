@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>hv-kb390l-config</id>
+    <version>1.1.0</version>
+    <tags>admin havit hv-kb390l</tags>
+    <copyright>Pavel Bludov</copyright>
+    <authors>Pavel Bludov</authors>
+    <owners>Pavel Bludov</owners>
+    <title>HV KB390L configuration utility</title>
+    <summary>HAVIT KB390L keyboard configuration utility</summary>
+    <description>
+      HAVIT KB390L keyboard configuration utility (unofficial). Allows you to configure the buttons and profiles of your device.
+      See https://www.prohavit.com/products/hv-kb390l-low-profile-mechanical-keyboard/ for details.
+    </description>
+    <projectUrl>https://github.com/pbludov/hv-kb390l-config/</projectUrl>
+    <licenseUrl>https://github.com/pbludov/hv-kb390l-config/blob/master/LICENSE</licenseUrl>
+    <packageSourceUrl>https://github.com/pbludov/hv-kb390l-config/</packageSourceUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://github.com/pbludov/hv-kb390l-config/raw/master/res/hv-kb390l-config.png</iconUrl>
+    <releaseNotes>
+      * Ability to change the USB report rate.
+      * Configurable delay for the neon illumination.
+      * More stable MacOS version.
+    </releaseNotes>
+  </metadata>
+  <files>
+    <file src="chocolateyInstall.ps1" target="tools" />
+  </files>
+</package>

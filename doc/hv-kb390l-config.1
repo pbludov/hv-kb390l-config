@@ -1,0 +1,44 @@
+.TH "hv-kb390l-config" "1" "January 21, 2018" "hv-kb390l-config
+
+1.0" ""
+.SH "NAME"
+HAVIT KB390L keyboard unofficial configuration utility.
+.SH "SYNOPSIS"
+.PP
+\fBhv-kb390l-config\fR [\fBoption\fP]
+.SH "DESCRIPTION"
+.PP
+hv-kb390l-config is an utility program allows you to configure the buttons of your device.
+.PP
+Homepage: https://github.com/pbludov/hv-kb390l-config/
+.SH "OPTIONS"
+.IP "\fB-g\fP, \fB\-\-game\-mode\fP         " 10
+Get the game mode.
+.IP "\fB-G\fP, \fB\-\-set\-game-mode\fP \fBon|off\fP" 10
+Switch the game mode on/off.
+.IP "\fB-r\fP, \fB\-\-report\-rate\fP         " 10
+Get the report rate (3 => 1000 reports per second, 2 => 500, 1 => 250, 0 => 125).
+.IP "\fB-R\fP, \fB\-\-set\-report\-rate\fP \fBRATE\fP" 10
+Select the report rate.
+.IP "\fB-t\fP, \fB\-\-response\-time\fP         " 10
+Get the response time (2..20ms).
+.IP "\fB-T\fP, \fB\-\-set\-response\-time\fP \fBMILLISECONDS\fP" 10
+Select the response time.
+.IP "\fB\fP    \fB\-\-backup\fP \fBFILE\fP" 10
+Backup NAND data to a file.
+.IP "\fB\fP    \fB\-\-restore\fP \fBFILE\fP" 10
+Restore NAND data from a file.
+.IP "\fB\fP    \fB\-\-verbose\fP         " 10
+Be verbose (print USB traffic).
+.IP "\fB\fP    \fB\-\-reset\fP         " 10
+Reset the device to firmware settings.
+.IP "\fB-v\fP, \fB\-\-version\fP         " 10
+Show version information and exit.
+.IP "\fB-?\fP, \fB\-\-help\fP         " 10
+Show help information and exit.
+.SH "AUTHOR"
+.PP
+This manual page was written by Pavel Bludov. Permission is
+granted to copy, distribute and/or modify this document under
+the terms of the GNU General Public License, Version 2.1.
+

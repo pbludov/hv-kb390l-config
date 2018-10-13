@@ -1,0 +1,13 @@
+Source: hv-kb390l-config
+Section: contrib/misc
+Priority: optional
+Maintainer: Pavel Bludov <pbludov@gmail.com>
+Standards-Version: 3.2.1
+Build-Depends: pkg-config, debhelper, qt5-default, libqt5widgets5, libhidapi-dev, libusb-1.0-0-dev
+
+Package: hv-kb390l-config
+Architecture: i386 amd64
+Pre-Depends: debconf (>= 1.1) | debconf-2.0
+Depends: ${shlibs:Depends}
+Description: HAVIT KB390L keyboard unofficial configuration utility.
+  Allows you to configure the buttons and profiles of your device.

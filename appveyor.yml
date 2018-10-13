@@ -1,0 +1,32 @@
+version: 1.1.{build}
+pull_requests:
+  do_not_increment_build_number: true
+skip_non_tags: true
+image: Visual Studio 2013
+
+environment:
+  QT_DIR: C:\Qt\5.8\mingw53_32
+  MINGW_DIR: C:\Qt\Tools\mingw530_32
+
+configuration:
+  - release
+  - debug
+
+# Fix line endings on Windows
+init:
+- git config --global core.autocrlf true
+
+install:
+- set PATH=%MINGW_DIR%\bin;%QT_DIR%\bin;c:\msys64\mingw32\bin;%WIX%\bin;%PATH%
+
+build_script:
+- qmake CONFIG+=%CONFIGURATION%
+- mingw32-make -f Makefile.%CONFIGURATION%
+- windeployqt.exe --no-svg --no-angle --no-opengl-sw --no-system-d3d-compiler --no-translations --libdir qtredist --plugindir qtredist %CONFIGURATION%\hv-kb390l-config.exe
+- heat dir qtredist -cg CG_QtRedist -var var.QtRedistDir -ag -srd -sfrag -dr INSTALLDIR -out qtredist.wxs
+- candle -dConfiguration=%CONFIGURATION% -dQtRedistDir=qtredist hv-kb390l-config.wxs qtredist.wxs
+- light hv-kb390l-config.wixobj qtredist.wixobj -out %CONFIGURATION%\hv-kb390l-config.msi
+
+artifacts:
+- path: '%CONFIGURATION%\hv-kb390l-config.msi'
+  name: windows-installer
