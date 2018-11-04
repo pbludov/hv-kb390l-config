@@ -1,3 +1,9 @@
+hv-kb390l-config (1.0.1-1cosmic2) cosmic; urgency=medium
+
+  * Fix macro page.
+
+ -- Pavel Bludov <pbludov@gmail.com>  Sun, 4 Nov 2018 18:54:22 +0300
+
 hv-kb390l-config (1.0.0-1cosmic2) cosmic; urgency=medium
 
   * Initial version.

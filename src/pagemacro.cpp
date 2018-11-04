@@ -158,14 +158,8 @@ QByteArray PageMacro::macro() const
         }
     }
 
-    if (macro.length() == 2)
-    {
-        // Empty macro, repeat count only.
-        macro.resize(0);
-    }
-
     // Add extra zeros to mark the end of macro
-    return macro.append("\x0\x0", 2);
+    return macro.append("\x0\x0", 192 - macro.size());
 }
 
 void PageMacro::setMacro(QByteArray &macro)

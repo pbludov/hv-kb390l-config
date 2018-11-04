@@ -272,7 +272,7 @@ void KB390L::setMacro(int index, const QByteArray &value)
     auto page = readPage(CmdMacro, index);
     if (page != value)
     {
-        page = value;
+        cache[index << 8 | CmdMacro] = value;
         dirtyPages[index << 8 | CmdMacro] = true;
     }
 }
